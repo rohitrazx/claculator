@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>calculator</title>
+</head>
+
+<body>
+	<table border="1" cellspacing="0">
+		<tr>
+			<td colspan="4" id="input">0</td>
+		</tr>
+		<tr>
+			<td colspan="3"><button onclick="push(this);">AC</button></td>
+			<td><button onclick="push(this);">/</button></td>
+		</tr>
+		<tr>
+			<td><button onclick="push(this);">7</button></td>
+			<td><button onclick="push(this);">8</button></td>
+			<td><button onclick="push(this);">9</button></td>
+			<td><button onclick="push(this);">*</button></td>
+		</tr>
+		<tr>
+		<tr>
+			<td><button onclick="push(this);">4</button></td>
+			<td><button onclick="push(this);">5</button></td>
+			<td><button onclick="push(this);">6</button></td>
+			<td><button onclick="push(this);">-</button></td>
+		</tr>
+		<tr>
+			<td><button onclick="push(this);">1</button></td>
+			<td><button onclick="push(this);">2</button></td>
+			<td><button onclick="push(this);">3</button></td>
+			<td><button onclick="push(this);">+</button></td>
+		</tr>
+		<tr>
+			<td><button onclick="push(this);">0</button></td>
+			<td><button onclick="push(this);">.</button></td>
+			<td><button onclick="push(this);">=</button></td>
+			<td><button onclick="push(this);">%</button></td>
+		</tr>
+	</table>
+	<script>
+		var input=document.getElementById("input");
+		function push(obj)	
+		{ 
+			var pushed = obj.innerHTML;
+			if(pushed=='='){
+				input.innerHTML=eval(input.innerHTML);
+			} 
+			else if(pushed=='AC'){
+				input.innerHTML='0';
+			}
+			else{
+				if(input.innerHTML=='0'){
+					input.innerHTML=pushed;
+				} 
+				else{
+					input.innerHTML+=pushed;
+				} 
+			}  
+		}
+	</script>
+</body>
+</html>
